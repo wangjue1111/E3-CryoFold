@@ -54,7 +54,7 @@ To get started with CryoFold, follow these steps:
 
 3. **Download the Pretrained Model**:
 
-    We provide a pretrained model for CryoFold. [Download it here]() and place it in the pretrained_models directory.
+    We provide a pretrained model for CryoFold. [Download it here](https://github.com/A4Bio/CryoFold/releases/download/checkpoint/checkpoint.pt) and place it in the pretrained_models directory.
 
 
 ## Quick Start
@@ -119,6 +119,8 @@ CryoFold
 │   │   ├── map.map
 │   │   ├── seq_chain_info.json
 │   │   └── normed_map.mrc
+|   |── pretrained_model
+│   │   ├── checkpoint.pt
 ```
 
 ### 2. Running Inference:
