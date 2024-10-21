@@ -143,7 +143,9 @@ CryoFold
 
 For a complete description of the method, see:
 
-
+```
+TBD
+```
 
 ## Contact
 
@@ -155,4 +157,4 @@ Please submit any bug reports, feature requests, or general usage feedback as a 
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE file](https://github.com/A4Bio/CryoFold/blob/main/LICENSE) for details.
