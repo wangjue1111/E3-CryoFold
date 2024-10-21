@@ -1,0 +1,11 @@
+.conda
+.vscode
+.ipynb*
+__pycache__
+
+results/
+
+core.*
+
+.DS_Store
+checkpoint.pt
