@@ -1,1 +1,0 @@
-python inference.py --density_map_path examples/density_map --pdb_path examples/5uz7.pdb 
