@@ -139,7 +139,7 @@ CryoFold
 │   └── output.pdb
 ```
 
-## References:
+## References
 
 For a complete description of the method, see:
 
