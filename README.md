@@ -60,6 +60,9 @@ To get started with CryoFold, follow these steps:
 
     We provide a pretrained model for CryoFold. [Download it here](https://github.com/A4Bio/CryoFold/releases/download/checkpoint/checkpoint.pt) and place it in the pretrained_models directory.
 
+4. **Download the Experimental dataset**:
+   The training set can be downloaded in https://doi.org/10.7910/DVN/FCDG0W, and the standard test dataset can be downloaded in https://doi.org/10.7910/DVN/2GSSC9.
+
 
 ## Quick Start
 
