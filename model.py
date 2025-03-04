@@ -45,9 +45,9 @@ class CryoFold(nn.Module):
         self.norm = nn.BatchNorm3d if norm == 'batch' else nn.InstanceNorm3d
         self.embed = Embeddings3D(input_dim=input_dim, embed_dim=embed_dim, cube_size=img_shape,
                                   patch_size=patch_size, dropout=dropout)
-        self.position_emb = nn.Embedding(num_embeddings=10000, embedding_dim=embed_dim)
+        self.position_emb = nn.Embedding(num_embeddings=30000, embedding_dim=embed_dim)
         self.token_embed = nn.Embedding(num_embeddings=33, embedding_dim=embed_dim, padding_idx=alphabet.padding_idx)
-        self.chain_embed = nn.Embedding(num_embeddings=500, embedding_dim=embed_dim, padding_idx=0)
+        self.chain_embed = nn.Embedding(num_embeddings=1000, embedding_dim=embed_dim, padding_idx=0)
         
         self.transformer = TransformerEncoder(embed_dim, num_heads, self.num_layers, dropout, ext_layers,
                                               dim_linear_block=dim_linear_block)
@@ -65,7 +65,7 @@ class CryoFold(nn.Module):
         seq = self.esm(seq, repr_layers=[12])['representations'][12] 
         seq = seq + self.chain_embed(chain_encoding) + self.position_emb(seq_pos)
         protein, seq = self.transformer(transformer_input, seq, mask.float())
-        y = self.cross_attn(seq, protein, protein) + seq
+        y = self.cross_attn(seq, protein, protein)
         h_V = self.to_hV(y)
 
         X = self.atom_norm(self.out(y)).view(batch_size, length, 4, 3)[mask]
