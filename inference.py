@@ -77,7 +77,7 @@ def main():
         coords = get_coord_from_pdb(args.pdb_path)
         coords = torch.from_numpy(coords).to(device)
 
-    preds, seqs, chain_encodings = infer_structure(model, maps, seq, chain_encoding, coords)
+    preds, seqs, chain_encodings = infer_structure(model, maps, seq, chain_encoding)
     save_protein(preds, seqs, chain_encodings, args.output_dir)
 
 if __name__ == "__main__":
